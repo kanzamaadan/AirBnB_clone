@@ -5,7 +5,6 @@
 </p>
 
 <h1 align="center">AirBnB</h1>
-<p align="center">An AirBnB clone.</p>
 
 ## Welcome to the AirBnB clone project!
 	* This is the first step towards building a full web application
