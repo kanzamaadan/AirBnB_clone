@@ -9,6 +9,11 @@ class BaseModel:
     """ Defines the BaseModel class."""
 
     def __init__(self, *args, **kwargs):
+        """
+        Args:
+            - *args: list of arguments
+            - **kwargs: dict of key-values arguments
+        """
         if kwargs:
             for key, value in kwargs.items():
                 if key == 'created_at' or key == 'updated_at':
@@ -26,7 +31,6 @@ class BaseModel:
 
     def to_dict(self):
         """Return the dictionary of the BaseModel instance"""
-
         obj_dict = self.__dict__.copy()
         obj_dict['created_at'] = self.created_at.isoformat()
         obj_dict['updated_at'] = self.updated_at.isoformat()
@@ -34,5 +38,6 @@ class BaseModel:
         return obj_dict
 
     def save(self):
+        """updates the public instance attribute updated_at"""
         self.update_at = datetime.now()
         storage.save()
