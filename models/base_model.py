@@ -32,6 +32,11 @@ class BaseModel:
         """A description of the entire function, its parameters, and its return"""
         return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
 
+    def save(self):
+        """updates the public instance attribute updated_at"""
+        self.update_at = datetime.now()
+        storage.save()
+
     def to_dict(self):
         """Return the dictionary of the BaseModel instance"""
         obj_dict = self.__dict__.copy()
@@ -39,8 +44,3 @@ class BaseModel:
         obj_dict['updated_at'] = self.updated_at.isoformat()
         obj_dict['__class__'] = self.__class__.__name__
         return obj_dict
-
-    def save(self):
-        """updates the public instance attribute updated_at"""
-        self.update_at = datetime.now()
-        storage.save()
