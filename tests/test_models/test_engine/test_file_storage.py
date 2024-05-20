@@ -7,7 +7,6 @@ Unittest classes:
 """
 
 import unittest
-import unittest.testcase
 
 class TestFileStorage_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the FileStorage class."""

@@ -7,7 +7,6 @@ Unittest classes:
     TestBaseModel_to_dict
 """
 import unittest
-import unittest.test
 
 class TestBaseModel_Instantation(unittest.TestCase):
     """Unittests for testing instantiation of the BaseModel class."""
