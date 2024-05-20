@@ -1,7 +1,6 @@
 #!/usr/bin/bash
 
-pycodestyle *.py ; cd models ;
-pycodestyle *.py ; cd engine ;
+pycodestyle *.py ; cd models ; pycodestyle *.py ; cd engine ;
 pycodestyle *.py ; cd ../../tests ; pycodestyle *.py ;
 cd test_models ; pycodestyle *.py ; cd  test_engine ;
 
