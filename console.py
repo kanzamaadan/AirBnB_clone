@@ -7,12 +7,25 @@ from datetime import datetime
 import shlex
 import re
 from models.user import User
-
-classes = {"User": User}
+from models.place import Place
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.review import Review
 
 class HBNBCommand(cmd.Cmd):
     """HBNBCommand class"""
     prompt = "(hbnb)"
+
+    classes = {
+               "BaseModel": BaseModel,
+               "User": User,
+               "Place": Place,
+               "State": State,
+               "City": City,
+               "Amenity": Amenity,
+               "Review": Review
+               }
 
     def do_create(self, arg):
         """Creates a new instance of BaseModel, saves it (to the JSON file) and prints the id. Ex: create BaseModel"""
