@@ -3,6 +3,8 @@
 
 import json
 from models.base_model import BaseModel
+from modesl.user import User
+
 
 class FileStorage:
     """
@@ -11,6 +13,9 @@ class FileStorage:
         __file_path
         __objects
     """
+    classes = {"user": User}
+
+
     __file_path = 'file.json'
     __objects = {}
 
