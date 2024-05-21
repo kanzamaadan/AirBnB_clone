@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""class FileStorage that serializes instances to a JSON file and deserializes JSON file to instances"""
+"""class FileStorage that serializes instances
+to a JSON file and deserializes JSON file to instances"""
 
 import json
 from models.base_model import BaseModel
@@ -9,6 +10,7 @@ from models.state import State
 from models.city import City
 from models.amenity import Amenity
 from models.review import Review
+
 
 class FileStorage:
     """
@@ -26,8 +28,6 @@ class FileStorage:
                "Amenity": Amenity,
                "Review": Review
                }
-
-
     __file_path = 'file.json'
     __objects = {}
 
@@ -36,7 +36,8 @@ class FileStorage:
         return FileStorage.__objects
 
     def new(self, obj):
-        """instance that Serializes __objects to the JSON file (path: __file_path)"""
+        """instance that Serializes __objects
+        to the JSON file (path: __file_path)"""
         key = "{} {}".format(obj.__class__.__name__, obj.id)
         FileStorage.__objects[key] = obj
 
@@ -56,7 +57,8 @@ class FileStorage:
                 json_file = json.load(f)
                 for key, value in json_file:
                     class_name, obj_id = key.split(',')
-                    module = __import__('models', + class_name, fromlist=[class_name])
+                    module = __import__('models', + class_name,
+                                        fromlist=[class_name])
                     obj = cls(**value)
                     FileStorage.__objects[key] = obj
         except FileNotFoundError:
