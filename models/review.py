@@ -2,6 +2,7 @@
 """Represents a review for a place."""
 from models.base_model import BaseModel
 
+
 class Review(BaseModel):
     """Represents a review for a place."""
 

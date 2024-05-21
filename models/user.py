@@ -2,6 +2,7 @@
 """Representation of user in the application."""
 from models.base_models import BaseModel
 
+
 class User(BaseModel):
     """User that inherits from BaseModel"""
 
