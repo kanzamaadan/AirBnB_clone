@@ -1,6 +1,14 @@
 #!/usr/bin/python3
 """ This module contains the entry point of the command interpreter """
 import cmd
+from models import storage
+from models.base_model import BaseModel
+from datetime import datetime
+import shlex
+import re
+from models.user import User
+
+classes = {"User": User}
 
 class HBNBCommand(cmd.Cmd):
     """HBNBCommand class"""
