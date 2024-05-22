@@ -100,7 +100,7 @@ class HBNBCommand(cmd.Cmd):
                 return
             obj_dict = models.storage.all()
             for key, value in obj_dict.items():
-                obj_dict.append(str(value))
+                obj_list.append(str(value))
         else:
             obj_dict = model.storage.all()
             for value in obj_dict.values():
