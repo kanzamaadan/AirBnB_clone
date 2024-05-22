@@ -53,16 +53,16 @@ class HBNBCommand(cmd.Cmd):
         if not arg:
             print("** class name missing **")
             return
-        arg = args.split(" ")
+        arg = arg.split(" ")
         class_name = arg[0]
-        if clas_name not in ["BaseModel"]:
+        if class_name not in ["BaseModel"]:
             print("** class doesnt't exist **")
             return
         if len(arg) < 2:
             print("** instance id missing **")
             return
         obj_id = arg[1].strip('"\'')
-        key = "{} {}".format(class_name, obj_dict)
+        key = "{} {}".format(class_name, obj_id)
         all_objs = models.storage.all()
         if key not in all_objs:
             print("** no instace found **")
