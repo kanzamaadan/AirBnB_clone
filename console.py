@@ -127,7 +127,7 @@ class HBNBCommand(cmd.Cmd):
             ValueError: If the attribute does not exist.
             ValueError: If the value is of an invalid type.
         """
-        arg = arg.split(" ")
+        arg = arg.split()
         class_name = arg[0]
         try:
             arg = shlex.split(arg)
@@ -146,7 +146,7 @@ class HBNBCommand(cmd.Cmd):
             extracted_dic_str = match.group(0)
             dict_update = eval(extracted_dic_str)
 
-            if class_name not in ["BaseModel"]:
+            if class_name not in HBNBCommand.classes:
                 print("** class doesn't exist **")
                 return
 
