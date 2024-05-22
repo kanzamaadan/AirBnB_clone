@@ -8,9 +8,11 @@ Unittest classes:
 
 import unittest
 
+
 class TestFileStorage_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the FileStorage class."""
     pass
+
 
 if __name__ == "__main__":
     unittest.main()
