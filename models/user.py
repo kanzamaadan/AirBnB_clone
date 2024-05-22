@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Representation of user in the application."""
-from models.base_models import BaseModel
+from models.base_model import BaseModel
 
 
 class User(BaseModel):
