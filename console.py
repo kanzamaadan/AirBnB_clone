@@ -53,9 +53,9 @@ class HBNBCommand(cmd.Cmd):
         if not arg:
             print("** class name missing **")
             return
-        arg = arg.split(" ")
+        arg = arg.split()
         class_name = arg[0]
-        if class_name not in ["BaseModel"]:
+        if class_name not in self.classes:
             print("** class doesnt't exist **")
             return
         if len(arg) < 2:
