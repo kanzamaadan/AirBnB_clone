@@ -4,7 +4,7 @@ to a JSON file and deserializes JSON file to instances"""
 
 import json
 from models.base_model import BaseModel
-from modesl.user import User
+from models.user import User
 from models.place import Place
 from models.state import State
 from models.city import City
@@ -46,7 +46,7 @@ class FileStorage:
         """Serializes __objects to the JSON file (path: __file_path)"""
         json_objects = {}
         for key in self.__class__.__objects:
-            json_object[key] = self.__class__.__objects[key].to_dict()
+            json_objects[key] = self.__class__.__objects[key].to_dict()
         with open(self.__class__.__file_path, "w") as file:
             json.dump(json_objects, file)
 
