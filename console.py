@@ -127,7 +127,7 @@ class HBNBCommand(cmd.Cmd):
             ValueError: If the attribute does not exist.
             ValueError: If the value is of an invalid type.
         """
-        arg = arg.split("")
+        arg = arg.split(" ")
         class_name = arg[0]
         try:
             arg = shlex.split(arg)
